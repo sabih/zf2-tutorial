@@ -16,7 +16,7 @@ return array(
                     'route'    => '/',
                     'defaults' => array(
                         //'controller' => 'Application\Controller\Index',
-						'controller' => 'Album\Controller\Album', // <-- change here
+			'controller' => 'Album\Controller\Album', // <-- change here
                         'action'     => 'index',
                     ),
                 ),

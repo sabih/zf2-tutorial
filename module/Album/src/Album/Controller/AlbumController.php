@@ -8,18 +8,18 @@ use Album\Form\AlbumForm;
 
 class AlbumController extends AbstractActionController
 {
-	protected $albumTable;
+    protected $albumTable;
 
     public function indexAction()
     {
-		return new ViewModel(array(
+	return new ViewModel(array(
             'albums' => $this->getAlbumTable()->fetchAll(),
         ));
     }
 
     public function addAction()
     {
-		$form = new AlbumForm();
+	$form = new AlbumForm();
         $form->get('submit')->setValue('Add');
 
         $request = $this->getRequest();
@@ -41,7 +41,7 @@ class AlbumController extends AbstractActionController
 
     public function editAction()
     {
-		$id = (int) $this->params()->fromRoute('id', 0);
+	$id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('album', array(
                 'action' => 'add'
@@ -84,7 +84,7 @@ class AlbumController extends AbstractActionController
 
     public function deleteAction()
     {
-		$id = (int) $this->params()->fromRoute('id', 0);
+	$id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('album');
         }
@@ -108,7 +108,7 @@ class AlbumController extends AbstractActionController
         );
     }
 	
-	public function getAlbumTable()
+    public function getAlbumTable()
     {
         if (!$this->albumTable) {
             $sm = $this->getServiceLocator();
